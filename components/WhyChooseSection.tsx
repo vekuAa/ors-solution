@@ -45,7 +45,7 @@ const reasons = [
 
 export default function WhyChooseSection() {
   return (
-    <section className="bg-white px-6 py-24 lg:px-20">
+    <section id="pourquoi-ors" className="bg-white px-6 py-24 lg:px-20">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-3xl">
           <p className="font-bold text-blue-600">Pourquoi ORS ?</p>

@@ -8,6 +8,7 @@ import { useState } from "react";
 const links = [
   { label: "Diagnostic Atelier ORS", href: "#diagnostic" },
   { label: "Méthode", href: "#methode" },
+  { label: "Pourquoi ORS ?", href: "#pourquoi-ors" },
   { label: "Premium", href: "#premium" },
   { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },
