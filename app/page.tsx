@@ -7,6 +7,7 @@ import FaqSection from "@/components/FaqSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import BeforeAfterSection from "@/components/BeforeAfterSection";
+import MethodSection from "@/components/MethodSection";
 
 export default function HomePage() {
   return (
@@ -17,6 +18,7 @@ export default function HomePage() {
         <ProblemSection />
         <BeforeAfterSection />
         <RoiCalculator />
+        <MethodSection />
         <PremiumSection />
         <FaqSection />
         <ContactSection />

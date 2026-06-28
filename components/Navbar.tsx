@@ -4,8 +4,10 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
+
 const links = [
   { label: "Diagnostic Atelier ORS", href: "#diagnostic" },
+  { label: "Méthode", href: "#methode" },
   { label: "Premium", href: "#premium" },
   { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },
