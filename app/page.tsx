@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import BeforeAfterSection from "@/components/BeforeAfterSection";
 import MethodSection from "@/components/MethodSection";
 import WhyChooseSection from "@/components/WhyChooseSection";
+import HiddenCostSection from "@/components/HiddenCostSection";
 
 
 export default function HomePage() {
@@ -18,6 +19,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <ProblemSection />
+        <HiddenCostSection />
         <BeforeAfterSection />
         <RoiCalculator />
         <MethodSection />
