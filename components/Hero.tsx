@@ -10,11 +10,6 @@ type SmallMetricProps = {
   value: string;
 };
 
-type ProgressProps = {
-  title: string;
-  value: number;
-};
-
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-white via-slate-50 to-white">
@@ -63,7 +58,7 @@ export default function Hero() {
             <SmallMetric
               icon={<Clock3 size={18} />}
               title="Temps récupéré"
-              value="Jusqu’à plusieurs heures / semaine*"
+              value="Estimation selon votre atelier"
             />
 
             <SmallMetric
@@ -81,7 +76,7 @@ export default function Hero() {
 
           <p className="mt-6 text-xs text-slate-500">
             * Les gains dépendent de l’organisation de l’atelier et des données
-            saisies dans notre simulateur.
+            saisies dans notre diagnostic.
           </p>
         </motion.div>
 
@@ -91,36 +86,59 @@ export default function Hero() {
           transition={{ delay: 0.2, duration: 0.8 }}
         >
           <div className="rounded-[32px] border border-slate-200 bg-white p-8 shadow-2xl">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm font-semibold text-slate-500">
-                  Temps récupérable
+            <p className="text-sm font-bold text-blue-600">
+              Simulation atelier
+            </p>
+
+            <h2 className="mt-4 text-3xl font-black tracking-tight text-slate-950">
+              24 véhicules par jour
+            </h2>
+
+            <p className="mt-3 leading-7 text-slate-600">
+              Si chaque véhicule mobilise 20 minutes sur des tâches annexes,
+              cela représente une journée complète de travail récupérable.
+            </p>
+
+            <div className="mt-8 rounded-3xl bg-slate-50 p-6">
+              <div className="flex items-center justify-between gap-6 border-b border-slate-200 pb-5">
+                <div>
+                  <p className="font-black text-slate-950">
+                    Temps annexe estimé
+                  </p>
+                  <p className="text-sm text-slate-500">24 × 20 minutes</p>
+                </div>
+
+                <p className="text-4xl font-black text-blue-600">8 h</p>
+              </div>
+
+              <div className="flex items-center justify-between gap-6 border-b border-slate-200 py-5">
+                <div>
+                  <p className="font-black text-slate-950">Avec ORS</p>
+                  <p className="text-sm text-slate-500">
+                    Le technicien passe au véhicule suivant
+                  </p>
+                </div>
+
+                <p className="rounded-full bg-green-100 px-4 py-2 font-black text-green-700">
+                  Optimisé
                 </p>
-
-                <h2 className="mt-2 text-5xl font-black text-blue-600">8 h</h2>
               </div>
 
-              <div className="rounded-full bg-green-100 px-4 py-2 font-bold text-green-700">
-                + Productivité
+              <div className="pt-5">
+                <p className="font-black text-slate-950">Forfait Premium</p>
+
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  Une concession peut proposer un service Premium à 10 € afin
+                  de contribuer au financement de la prestation ORS.
+                </p>
               </div>
             </div>
 
-            <div className="mt-10 space-y-5">
-              <Progress title="Production" value={92} />
-              <Progress title="Temps perdu" value={28} />
-              <Progress title="Rentabilité" value={87} />
-            </div>
-
-            <div className="mt-10 rounded-3xl bg-slate-950 p-6 text-white">
-              <p className="text-sm text-slate-400">Forfait Premium</p>
-
-              <p className="mt-2 text-3xl font-black">Jusqu’à 10 €</p>
-
-              <p className="mt-2 text-slate-400">
-                Possibilité de contribuer au financement de la prestation selon
-                la politique commerciale de la concession.
-              </p>
-            </div>
+            <p className="mt-6 text-xs leading-6 text-slate-500">
+              Exemple indicatif. Les résultats réels dépendent du volume, de
+              l’organisation atelier et du temps réellement consacré aux tâches
+              annexes.
+            </p>
           </div>
         </motion.div>
       </div>
@@ -136,26 +154,6 @@ function SmallMetric({ icon, title, value }: SmallMetricProps) {
       <div>
         <p className="text-sm font-bold">{title}</p>
         <p className="text-sm text-slate-500">{value}</p>
-      </div>
-    </div>
-  );
-}
-
-function Progress({ title, value }: ProgressProps) {
-  return (
-    <div>
-      <div className="mb-2 flex justify-between">
-        <span className="font-semibold">{title}</span>
-        <span className="font-bold">{value}%</span>
-      </div>
-
-      <div className="h-3 rounded-full bg-slate-100">
-        <motion.div
-          initial={{ width: 0 }}
-          animate={{ width: `${value}%` }}
-          transition={{ duration: 1 }}
-          className="h-3 rounded-full bg-blue-600"
-        />
       </div>
     </div>
   );
