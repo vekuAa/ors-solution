@@ -13,6 +13,7 @@ const links = [
   { label: "Premium", href: "#premium" },
   { label: "Secteurs", href: "#secteurs" },
   { label: "FAQ", href: "#faq" },
+  { label: "Automobile", href: "/automobile" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -27,11 +28,17 @@ export default function Navbar() {
         </Link>
 
         <nav className="hidden items-center gap-8 text-sm font-bold text-slate-700 md:flex">
-          {links.map((link) => (
-            <a key={link.href} href={link.href} className="hover:text-blue-600">
-              {link.label}
-            </a>
-          ))}
+{links.map((link) =>
+  link.href.startsWith("/") ? (
+    <Link key={link.href} href={link.href} className="hover:text-blue-600">
+      {link.label}
+    </Link>
+  ) : (
+    <a key={link.href} href={link.href} className="hover:text-blue-600">
+      {link.label}
+    </a>
+  )
+)}
         </nav>
 
         <a
@@ -53,11 +60,17 @@ export default function Navbar() {
       {open && (
         <div className="border-t border-slate-200 bg-white px-6 py-5 md:hidden">
           <div className="flex flex-col gap-4 font-bold text-slate-800">
-            {links.map((link) => (
-              <a key={link.href} href={link.href} onClick={() => setOpen(false)}>
-                {link.label}
-              </a>
-            ))}
+{links.map((link) =>
+  link.href.startsWith("/") ? (
+    <Link key={link.href} href={link.href} className="hover:text-blue-600">
+      {link.label}
+    </Link>
+  ) : (
+    <a key={link.href} href={link.href} className="hover:text-blue-600">
+      {link.label}
+    </a>
+  )
+)}
 
             <a
               href="#contact"
