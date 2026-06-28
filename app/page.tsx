@@ -10,7 +10,7 @@ import BeforeAfterSection from "@/components/BeforeAfterSection";
 import MethodSection from "@/components/MethodSection";
 import WhyChooseSection from "@/components/WhyChooseSection";
 import HiddenCostSection from "@/components/HiddenCostSection";
-
+import SectorsSection from "@/components/SectorsSection";
 
 export default function HomePage() {
   return (
@@ -25,6 +25,7 @@ export default function HomePage() {
         <MethodSection />
         <PremiumSection />
         <WhyChooseSection />
+        <SectorsSection />
         <FaqSection />
         <ContactSection />
       </main>
