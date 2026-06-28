@@ -8,6 +8,8 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import BeforeAfterSection from "@/components/BeforeAfterSection";
 import MethodSection from "@/components/MethodSection";
+import WhyChooseSection from "@/components/WhyChooseSection";
+
 
 export default function HomePage() {
   return (
@@ -20,6 +22,7 @@ export default function HomePage() {
         <RoiCalculator />
         <MethodSection />
         <PremiumSection />
+        <WhyChooseSection />
         <FaqSection />
         <ContactSection />
       </main>
