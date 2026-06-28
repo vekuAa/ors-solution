@@ -5,7 +5,7 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 const links = [
-  { label: "ROI", href: "#roi" },
+  { label: "Diagnostic Atelier ORS", href: "#diagnostic" },
   { label: "Premium", href: "#premium" },
   { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },

@@ -18,7 +18,7 @@ export default function RoiCalculator() {
   }, [vehicles, minutes, days, hourlyCost]);
 
   return (
-    <section id="roi" className="bg-slate-950 px-6 py-24 text-white lg:px-20">
+   <section id="diagnostic" className="bg-slate-950 px-6 py-24 text-white lg:px-20">
       <div className="mx-auto max-w-7xl">
         <h2 className="max-w-3xl text-4xl font-black tracking-tight md:text-5xl">
           Calculez le temps récupérable dans votre atelier.

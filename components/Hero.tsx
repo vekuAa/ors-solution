@@ -52,10 +52,10 @@ export default function Hero() {
             </a>
 
             <a
-              href="#roi"
+              href="#diagnostic"
               className="rounded-full border border-slate-300 px-7 py-4 font-bold hover:bg-slate-100"
             >
-              Calculer mon ROI
+              Lancer mon diagnostic
             </a>
           </div>
 

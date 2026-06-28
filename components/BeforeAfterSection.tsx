@@ -7,16 +7,16 @@ const beforeSteps = [
   "Diagnostic",
   "Réparation",
   "Contrôle",
-  "Nettoyage",
-  "Véhicule suivant",
+  "Nettoyage par le mécanicien",
+  "Véhicule suivant seulement après",
 ];
 
 const afterSteps = [
   "Diagnostic",
   "Réparation",
   "Contrôle",
-  "ORS prend le relais",
-  "Véhicule suivant",
+  "Le mécanicien passe au véhicule suivant",
+  "ORS nettoie en parallèle",
 ];
 
 export default function BeforeAfterSection() {
@@ -42,14 +42,14 @@ export default function BeforeAfterSection() {
         <div className="mt-14 grid gap-8 lg:grid-cols-2">
           <TimelineCard
             title="Sans ORS"
-            subtitle="Le technicien termine aussi les tâches annexes."
+            subtitle="Le technicien reste mobilisé jusqu’à la fin du nettoyage."
             steps={beforeSteps}
             variant="before"
           />
 
           <TimelineCard
             title="Avec ORS"
-            subtitle="ORS prend le relais sur la préparation et le nettoyage."
+            subtitle="Le technicien repart produire pendant qu’ORS prend le relais."
             steps={afterSteps}
             variant="after"
           />
