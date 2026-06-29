@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Car, Euro, RotateCcw, Sparkles } from "lucide-react";
+import { Car, RotateCcw, Sparkles, ClipboardCheck } from "lucide-react";
 
 export default function VoVnDiagnostic() {
   const [vo, setVo] = useState(80);
@@ -11,66 +11,88 @@ export default function VoVnDiagnostic() {
 
   const data = useMemo(() => {
     const totalVehicles = vo + vn + relavage + voSale;
-
-    const orsVehicleModel =
-      vo * 80 + vn * 50 + relavage * 40 + voSale * 120;
-
-    const daysAt180 = Math.ceil(orsVehicleModel / 180);
-    const daysAt190 = Math.ceil(orsVehicleModel / 190);
+    const specificCases = relavage + voSale;
 
     return {
       totalVehicles,
-      orsVehicleModel,
-      daysAt180,
-      daysAt190,
+      specificCases,
     };
   }, [vo, vn, relavage, voSale]);
 
   return (
-    <section id="diagnostic-vovn" className="bg-slate-950 px-6 py-24 text-white lg:px-20">
+    <section
+      id="diagnostic-vovn"
+      className="bg-slate-950 px-6 py-24 text-white lg:px-20"
+    >
       <div className="mx-auto max-w-7xl">
         <p className="font-bold text-blue-300">Diagnostic VO/VN</p>
 
         <h2 className="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-5xl">
-          Estimez votre volume de préparation automobile.
+          Évaluez votre volume de préparation automobile.
         </h2>
 
         <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
           Renseignez vos volumes mensuels pour visualiser la charge liée aux VO,
-          VN, relavages et véhicules très sales. ORS peut ensuite proposer un
-          modèle adapté : au véhicule ou au forfait journalier.
+          VN, relavages et véhicules nécessitant une attention particulière.
         </p>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8">
             <Field label="VO / mois" value={vo} onChange={setVo} />
             <Field label="VN / mois" value={vn} onChange={setVn} />
-            <Field label="Relavages / mois" value={relavage} onChange={setRelavage} />
-            <Field label="VO très sales / mois" value={voSale} onChange={setVoSale} />
+            <Field
+              label="Relavages / mois"
+              value={relavage}
+              onChange={setRelavage}
+            />
+            <Field
+              label="VO très sales / mois"
+              value={voSale}
+              onChange={setVoSale}
+            />
           </div>
 
           <div className="rounded-[2rem] bg-white p-8 text-slate-950">
             <p className="font-bold text-blue-600">Résultat estimatif</p>
 
             <h3 className="mt-3 text-3xl font-black">
-              Votre volume mensuel de préparation
+              Votre activité mensuelle de préparation
             </h3>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              <Result icon={<Car />} value={`${data.totalVehicles}`} label="véhicules / mois" />
-              <Result icon={<Euro />} value={`${data.orsVehicleModel.toLocaleString("fr-FR")} €`} label="modèle au véhicule" />
-              <Result icon={<Sparkles />} value="50 / 80 / 120 €" label="VN / VO / VO très sale" />
-              <Result icon={<RotateCcw />} value="40 €" label="relavage" />
+              <Result
+                icon={<Car />}
+                value={`${data.totalVehicles}`}
+                label="véhicules / mois"
+              />
+
+              <Result
+                icon={<Sparkles />}
+                value={`${vo}`}
+                label="VO à préparer"
+              />
+
+              <Result
+                icon={<ClipboardCheck />}
+                value={`${vn}`}
+                label="VN à préparer"
+              />
+
+              <Result
+                icon={<RotateCcw />}
+                value={`${data.specificCases}`}
+                label="relavages / cas spécifiques"
+              />
             </div>
 
             <div className="mt-8 rounded-3xl bg-slate-50 p-6">
               <p className="font-black">Lecture ORS</p>
 
               <p className="mt-3 leading-7 text-slate-600">
-                Selon vos volumes, ORS peut étudier deux approches : une
-                facturation au véhicule ou un forfait journalier entre{" "}
-                <strong>180 € HT et 190 € HT</strong>, selon le site et
-                l’organisation.
+                Votre volume mensuel permet d’étudier plusieurs modes
+                d’organisation : intervention au véhicule, forfait journalier ou
+                solution mixte selon vos flux VO/VN, vos pics d’activité et
+                votre organisation interne.
               </p>
             </div>
 
