@@ -6,14 +6,9 @@ import { useState } from "react";
 
 
 const links = [
-  { label: "Diagnostic Atelier ORS", href: "#diagnostic" },
+  { label: "Solutions", href: "/automobile" },
   { label: "Méthode", href: "#methode" },
-  { label: "Pourquoi ORS ?", href: "#pourquoi-ors" },
-  { label: "Problème", href: "#probleme" },
-  { label: "Premium", href: "#premium" },
-  { label: "Secteurs", href: "#secteurs" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Automobile", href: "/automobile" },
+  { label: "Diagnostic", href: "#diagnostic" },
   { label: "Contact", href: "#contact" },
 ];
 

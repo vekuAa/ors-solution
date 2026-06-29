@@ -1,144 +1,77 @@
 "use client";
 
-import type { ReactNode } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Clock3, TrendingUp, Users } from "lucide-react";
-
-type SmallMetricProps = {
-  icon: ReactNode;
-  title: string;
-  value: string;
-};
+import { ArrowRight, Building2, Clock3, Gauge } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white via-slate-50 to-white">
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute left-1/2 top-0 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-blue-100 opacity-60 blur-3xl" />
+    <section className="relative overflow-hidden bg-slate-950 px-6 py-28 text-white lg:px-20">
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute left-1/2 top-0 h-[700px] w-[700px] -translate-x-1/2 rounded-full bg-blue-600 blur-3xl" />
       </div>
 
-      <div className="mx-auto grid max-w-7xl gap-20 px-6 py-28 lg:grid-cols-2 lg:px-20">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-[1.05fr_0.95fr]">
         <motion.div
-          initial={{ opacity: 0, y: 35 }}
+          initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.75 }}
         >
-          <span className="rounded-full bg-blue-100 px-4 py-2 text-sm font-bold text-blue-700">
-            Optimisation opérationnelle
-          </span>
-
-          <h1 className="mt-8 text-5xl font-black leading-tight tracking-tight text-slate-950 md:text-7xl">
-            Libérez plusieurs heures
-            <span className="block text-blue-600">de production.</span>
-          </h1>
-
-          <p className="mt-8 max-w-xl text-xl leading-9 text-slate-600">
-            ORS permet aux concessions automobiles de récupérer du temps de
-            production en externalisant les tâches à faible valeur ajoutée.
+          <p className="inline-flex rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm font-bold text-blue-200">
+            ORS — Optimisation opérationnelle
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-4">
+          <h1 className="mt-8 text-5xl font-black leading-[0.95] tracking-tight md:text-7xl">
+            Optimiser
+            <span className="block text-blue-300">l’organisation.</span>
+            Libérer
+            <span className="block text-blue-300">la production.</span>
+          </h1>
+
+          <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-300 md:text-xl">
+            ORS accompagne les entreprises dans l’identification des tâches à
+            faible valeur ajoutée afin que leurs équipes puissent se concentrer
+            sur leur cœur de métier.
+          </p>
+
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-7 py-4 font-bold text-white transition hover:scale-105"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-7 py-4 font-black text-white transition hover:scale-105 hover:bg-blue-500"
             >
               Demander un audit
               <ArrowRight size={18} />
             </a>
 
             <a
-              href="#diagnostic"
-              className="rounded-full border border-slate-300 px-7 py-4 font-bold hover:bg-slate-100"
+              href="#methode"
+              className="inline-flex items-center justify-center rounded-full border border-white/20 px-7 py-4 font-black text-white transition hover:bg-white/10"
             >
-              Lancer mon diagnostic
+              Découvrir notre méthode
             </a>
           </div>
 
-          <div className="mt-12 flex flex-wrap gap-8">
-            <SmallMetric
-              icon={<Clock3 size={18} />}
-              title="Temps récupéré"
-              value="Estimation selon votre atelier"
-            />
-
-            <SmallMetric
-              icon={<TrendingUp size={18} />}
-              title="Performance"
-              value="Capacité atelier optimisée"
-            />
-
-            <SmallMetric
-              icon={<Users size={18} />}
-              title="Sans recrutement"
-              value="Prestataires dédiés"
-            />
+          <div className="mt-12 grid gap-4 sm:grid-cols-3">
+            <HeroPoint icon={<Clock3 size={20} />} text="Temps mieux utilisé" />
+            <HeroPoint icon={<Gauge size={20} />} text="Flux atelier optimisé" />
+            <HeroPoint icon={<Building2 size={20} />} text="Vision multisecteur" />
           </div>
-
-          <p className="mt-6 text-xs text-slate-500">
-            * Les gains dépendent de l’organisation de l’atelier et des données
-            saisies dans notre diagnostic.
-          </p>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
+          transition={{ delay: 0.15, duration: 0.75 }}
+          className="rounded-[2.5rem] border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur"
         >
-          <div className="rounded-[32px] border border-slate-200 bg-white p-8 shadow-2xl">
-            <p className="text-sm font-bold text-blue-600">
-              Simulation atelier
-            </p>
+          <div className="rounded-[2rem] bg-white p-6 text-slate-950">
+            <p className="font-bold text-blue-600">Méthode ORS</p>
 
-            <h2 className="mt-4 text-3xl font-black tracking-tight text-slate-950">
-              24 véhicules par jour
-            </h2>
-
-            <p className="mt-3 leading-7 text-slate-600">
-              Si chaque véhicule mobilise 20 minutes sur des tâches annexes,
-              cela représente une journée complète de travail récupérable.
-            </p>
-
-            <div className="mt-8 rounded-3xl bg-slate-50 p-6">
-              <div className="flex items-center justify-between gap-6 border-b border-slate-200 pb-5">
-                <div>
-                  <p className="font-black text-slate-950">
-                    Temps annexe estimé
-                  </p>
-                  <p className="text-sm text-slate-500">24 × 20 minutes</p>
-                </div>
-
-                <p className="text-4xl font-black text-blue-600">8 h</p>
-              </div>
-
-              <div className="flex items-center justify-between gap-6 border-b border-slate-200 py-5">
-                <div>
-                  <p className="font-black text-slate-950">Avec ORS</p>
-                  <p className="text-sm text-slate-500">
-                    Le technicien passe au véhicule suivant
-                  </p>
-                </div>
-
-                <p className="rounded-full bg-green-100 px-4 py-2 font-black text-green-700">
-                  Optimisé
-                </p>
-              </div>
-
-              <div className="pt-5">
-                <p className="font-black text-slate-950">Forfait Premium</p>
-
-                <p className="mt-2 text-sm leading-6 text-slate-600">
-                  Une concession peut proposer un service Premium à 10 € afin
-                  de contribuer au financement de la prestation ORS.
-                </p>
-              </div>
+            <div className="mt-6 space-y-4">
+              <FlowStep number="01" title="Identifier" text="Les tâches annexes qui mobilisent inutilement vos équipes." />
+              <FlowStep number="02" title="Réorganiser" text="Les flux pour recentrer les équipes sur leur cœur de métier." />
+              <FlowStep number="03" title="Déployer" text="Une solution adaptée à votre organisation terrain." />
+              <FlowStep number="04" title="Suivre" text="La prestation pour garantir stabilité, qualité et amélioration continue." />
             </div>
-
-            <p className="mt-6 text-xs leading-6 text-slate-500">
-              Exemple indicatif. Les résultats réels dépendent du volume, de
-              l’organisation atelier et du temps réellement consacré aux tâches
-              annexes.
-            </p>
           </div>
         </motion.div>
       </div>
@@ -146,14 +79,35 @@ export default function Hero() {
   );
 }
 
-function SmallMetric({ icon, title, value }: SmallMetricProps) {
+function HeroPoint({ icon, text }: { icon: React.ReactNode; text: string }) {
   return (
-    <div className="flex items-start gap-3">
-      <div className="rounded-xl bg-blue-100 p-2 text-blue-600">{icon}</div>
+    <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/10 p-4">
+      <div className="text-blue-300">{icon}</div>
+      <p className="text-sm font-bold text-slate-200">{text}</p>
+    </div>
+  );
+}
 
-      <div>
-        <p className="text-sm font-bold">{title}</p>
-        <p className="text-sm text-slate-500">{value}</p>
+function FlowStep({
+  number,
+  title,
+  text,
+}: {
+  number: string;
+  title: string;
+  text: string;
+}) {
+  return (
+    <div className="rounded-2xl bg-slate-50 p-5">
+      <div className="flex items-start gap-4">
+        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blue-600 text-sm font-black text-white">
+          {number}
+        </div>
+
+        <div>
+          <p className="font-black text-slate-950">{title}</p>
+          <p className="mt-1 text-sm leading-6 text-slate-600">{text}</p>
+        </div>
       </div>
     </div>
   );
