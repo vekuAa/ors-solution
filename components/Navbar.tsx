@@ -60,6 +60,9 @@ export default function Navbar() {
           <Link href="/methode" className="hover:text-white">
             Méthode
           </Link>
+          <Link href="/entreprise" className="hover:text-white">
+  Entreprise
+</Link>
           <Dropdown label="Ressources" items={resources} />
           <Link href="/contact" className="hover:text-white">
             Contact
@@ -90,7 +93,9 @@ export default function Navbar() {
             <MobileGroup title="Solutions" items={solutions} />
             <MobileLink href="/methode" label="Méthode" />
             <MobileGroup title="Ressources" items={resources} />
+            <MobileLink href="/entreprise" label="Entreprise" />
             <MobileLink href="/contact" label="Contact" />
+
 
             <a
               href="#contact"

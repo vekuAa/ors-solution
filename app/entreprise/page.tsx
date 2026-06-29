@@ -1,0 +1,174 @@
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+
+const values = [
+  {
+    title: "Organisation",
+    text: "Nous analysons avant d’agir.",
+  },
+  {
+    title: "Performance",
+    text: "Chaque minute doit servir le cœur de métier.",
+  },
+  {
+    title: "Simplicité",
+    text: "Une solution claire, lisible et adaptée au terrain.",
+  },
+  {
+    title: "Confiance",
+    text: "Une relation professionnelle, durable et suivie.",
+  },
+];
+
+const timeline = [
+  {
+    year: "2026",
+    title: "Création d’ORS",
+    text: "Lancement d’une approche centrée sur l’optimisation opérationnelle.",
+  },
+  {
+    year: "Aujourd’hui",
+    title: "Automobile",
+    text: "Première application concrète auprès des ateliers et concessions.",
+  },
+  {
+    year: "Demain",
+    title: "Nouveaux secteurs",
+    text: "Extension progressive vers l’industrie, la logistique et les services.",
+  },
+];
+
+export default function EntreprisePage() {
+  return (
+    <>
+      <Navbar />
+
+      <main className="bg-white text-slate-950">
+        <section className="bg-slate-950 px-6 py-28 text-white lg:px-20">
+          <div className="mx-auto max-w-7xl">
+            <p className="font-bold text-blue-300">Entreprise</p>
+
+            <h1 className="mt-5 max-w-5xl text-5xl font-black leading-tight tracking-tight md:text-7xl">
+              Nous croyons que l’organisation est devenue un avantage
+              concurrentiel.
+            </h1>
+
+            <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-300">
+              Chez ORS, nous pensons que les compétences sont de plus en plus
+              difficiles à recruter. C’est pourquoi nous aidons les entreprises
+              à identifier les tâches à faible valeur ajoutée afin que leurs
+              équipes puissent se concentrer sur leur cœur de métier.
+            </p>
+          </div>
+        </section>
+
+        <section className="px-6 py-28 lg:px-20">
+          <div className="mx-auto max-w-7xl">
+            <p className="max-w-5xl text-5xl font-black leading-tight tracking-tight md:text-7xl">
+              Nous ne vendons pas du nettoyage.
+              <span className="block text-blue-600">
+                Nous améliorons l’organisation.
+              </span>
+            </p>
+          </div>
+        </section>
+
+        <section className="bg-slate-50 px-6 py-24 lg:px-20">
+          <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2">
+            <div>
+              <p className="font-bold text-blue-600">Notre mission</p>
+
+              <h2 className="mt-4 text-4xl font-black tracking-tight md:text-5xl">
+                Aider les entreprises à consacrer davantage de temps aux
+                activités qui créent réellement de la valeur.
+              </h2>
+            </div>
+
+            <p className="text-lg leading-8 text-slate-600">
+              ORS intervient comme un partenaire d’organisation. Notre rôle est
+              d’observer le fonctionnement réel d’une entreprise, d’identifier
+              les tâches périphériques qui mobilisent inutilement les équipes,
+              puis de proposer une solution claire et adaptée.
+            </p>
+          </div>
+        </section>
+
+        <section className="px-6 py-24 lg:px-20">
+          <div className="mx-auto max-w-7xl">
+            <p className="font-bold text-blue-600">Nos valeurs</p>
+
+            <h2 className="mt-4 text-4xl font-black tracking-tight md:text-5xl">
+              Une méthode simple. Une exigence élevée.
+            </h2>
+
+            <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {values.map((value) => (
+                <div
+                  key={value.title}
+                  className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm"
+                >
+                  <h3 className="text-2xl font-black">{value.title}</h3>
+                  <p className="mt-4 leading-7 text-slate-600">{value.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-slate-950 px-6 py-24 text-white lg:px-20">
+          <div className="mx-auto max-w-7xl">
+            <p className="font-bold text-blue-300">Notre ambition</p>
+
+            <h2 className="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-5xl">
+              Aujourd’hui dans l’automobile. Demain dans d’autres secteurs.
+            </h2>
+
+            <div className="mt-12 grid gap-6 md:grid-cols-3">
+              {timeline.map((item) => (
+                <div
+                  key={item.title}
+                  className="rounded-[2rem] border border-white/10 bg-white/5 p-7"
+                >
+                  <p className="text-sm font-black text-blue-300">
+                    {item.year}
+                  </p>
+
+                  <h3 className="mt-4 text-2xl font-black">{item.title}</h3>
+
+                  <p className="mt-4 leading-7 text-slate-400">{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="px-6 py-24 lg:px-20">
+          <div className="mx-auto max-w-5xl rounded-[2.5rem] bg-blue-600 p-10 text-center text-white md:p-14">
+            <h2 className="text-4xl font-black tracking-tight md:text-5xl">
+              Vous souhaitez échanger avec ORS ?
+            </h2>
+
+            <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-blue-50">
+              Parlons de votre organisation et des tâches qui mobilisent vos
+              équipes au quotidien.
+            </p>
+
+            <Link
+              href="/contact"
+              className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-4 font-black text-blue-600"
+            >
+              Demander un audit
+              <ArrowRight size={18} />
+            </Link>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+      <BackToTop />
+    </>
+  );
+}
