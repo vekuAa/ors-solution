@@ -4,6 +4,7 @@ import BackToTop from "@/components/BackToTop";
 import RoiCalculator from "@/components/RoiCalculator";
 import MethodSection from "@/components/MethodSection";
 import ContactSection from "@/components/ContactSection";
+import VoVnDiagnostic from "@/components/VoVnDiagnostic";
 import PageHero from "@/components/ui/PageHero";
 import SectionTitle from "@/components/ui/SectionTitle";
 import {
@@ -12,24 +13,22 @@ import {
   Clock3,
   Gauge,
   ShieldCheck,
-  Sparkles,
-  Wrench,
 } from "lucide-react";
 
 const tasks = [
-  "Déplacement véhicule",
-  "Préparation avant restitution",
-  "Nettoyage léger ou approfondi",
-  "Contrôle visuel",
-  "Remise en état simple",
-  "Gestion des flux atelier",
+  "Sortie atelier après intervention",
+  "Préparation VO — véhicules d’occasion",
+  "Préparation VN — véhicules neufs",
+  "Relavage avant livraison ou restitution",
+  "Préparation esthétique légère",
+  "Gestion des flux de véhicules sur site",
 ];
 
 const benefits = [
   "Techniciens recentrés sur leur cœur de métier",
   "Organisation atelier plus fluide",
-  "Restitution véhicule mieux valorisée",
-  "Solution adaptée au fonctionnement réel du site",
+  "Préparation VO/VN mieux structurée",
+  "Restitution et livraison véhicule mieux valorisées",
 ];
 
 export default function AutomobilePage() {
@@ -40,8 +39,8 @@ export default function AutomobilePage() {
       <main className="bg-white text-slate-950">
         <PageHero
           eyebrow="Solution Automobile"
-          title="Optimisation des ateliers automobiles."
-          description="ORS accompagne les concessions automobiles dans l’identification et la prise en charge des tâches annexes afin que les techniciens restent concentrés sur leur cœur de métier."
+          title="Optimisation des ateliers, VO et VN."
+          description="ORS accompagne les concessions automobiles dans la prise en charge des tâches annexes liées à l’après-vente, à la préparation VO/VN, au relavage et à la restitution client."
           primaryCta={{
             label: "Lancer le diagnostic",
             href: "/audit",
@@ -56,21 +55,29 @@ export default function AutomobilePage() {
           <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2">
             <SectionTitle
               eyebrow="Le problème"
-              title="Un atelier ne perd pas du temps d’un seul coup."
+              title="Un site automobile ne perd pas du temps d’un seul coup."
             />
 
             <div className="space-y-6 text-lg leading-8 text-slate-600">
               <p>
                 Les pertes se créent par accumulation : déplacements,
-                préparation, nettoyage, contrôle visuel, restitution. Chaque
-                opération semble courte, mais leur addition pèse sur la capacité
-                réelle de l’atelier.
+                préparation, nettoyage, contrôle visuel, restitution, livraison
+                VO/VN ou relavage. Chaque opération semble courte, mais leur
+                addition pèse sur la capacité réelle du site.
               </p>
 
               <p>
-                Dans un contexte où les compétences techniques sont difficiles à
-                recruter, l’enjeu n’est pas de demander aux équipes de travailler
-                plus vite, mais de mieux organiser leur temps.
+                Dans un contexte où les compétences techniques et opérationnelles
+                sont difficiles à recruter, l’enjeu n’est pas de demander aux
+                équipes de travailler plus vite, mais de mieux organiser leur
+                temps.
+              </p>
+
+              <p>
+                Ces enjeux ne concernent pas uniquement l’après-vente. Ils
+                existent aussi sur la préparation VO/VN, les livraisons, les
+                relavages et les flux de véhicules entre les différents services
+                de la concession.
               </p>
             </div>
           </div>
@@ -79,19 +86,19 @@ export default function AutomobilePage() {
             <Card
               icon={<Clock3 />}
               title="Temps mobilisé"
-              text="Les techniciens peuvent rester bloqués sur des tâches qui ne relèvent pas directement de la production."
+              text="Les équipes peuvent rester bloquées sur des tâches qui ne relèvent pas directement de leur cœur de métier."
             />
 
             <Card
               icon={<Gauge />}
               title="Flux ralenti"
-              text="Le véhicule suivant attend pendant que l’équipe termine les opérations annexes."
+              text="Le véhicule suivant attend pendant que les opérations annexes sont terminées."
             />
 
             <Card
               icon={<Car />}
               title="Restitution à valoriser"
-              text="L’expérience client reste importante, mais elle ne doit pas bloquer le cœur de métier atelier."
+              text="La qualité de restitution ou de livraison reste essentielle, mais elle doit être organisée efficacement."
             />
           </div>
         </section>
@@ -100,9 +107,9 @@ export default function AutomobilePage() {
           <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2">
             <div>
               <SectionTitle
-                eyebrow="Tâches annexes"
-                title="Ce qui semble secondaire finit par peser sur l’organisation."
-                description="ORS aide à identifier les opérations pouvant être prises en charge autrement, sans perturber le fonctionnement quotidien de l’atelier."
+                eyebrow="Après-vente, VO et VN"
+                title="ORS accompagne les concessions sur plusieurs besoins opérationnels."
+                description="Nos interventions peuvent concerner la sortie atelier, la restitution client, la préparation de véhicules d’occasion, la préparation de véhicules neufs, le relavage ou la préparation avant livraison."
               />
             </div>
 
@@ -124,7 +131,8 @@ export default function AutomobilePage() {
           <div className="mx-auto max-w-7xl rounded-[2.5rem] bg-slate-950 p-10 text-white md:p-14">
             <SectionTitle
               eyebrow="La solution ORS"
-              title="Le technicien reste sur son métier. ORS prend le relais sur les tâches annexes."
+              title="Une organisation plus claire pour l’atelier, le VO et le VN."
+              description="ORS permet de structurer la prise en charge des tâches annexes afin que chaque équipe reste concentrée sur son rôle principal."
               light
             />
 
@@ -143,6 +151,7 @@ export default function AutomobilePage() {
 
         <MethodSection />
         <RoiCalculator />
+        <VoVnDiagnostic />
         <ContactSection />
       </main>
 
