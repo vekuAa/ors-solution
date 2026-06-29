@@ -7,6 +7,7 @@ import RoiCalculator from "@/components/RoiCalculator";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
+import ApproachSection from "@/components/ApproachSection";
 
 export default function HomePage() {
   return (
@@ -16,6 +17,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <ChallengesSection />
+          <ApproachSection />
         <BeforeAfterSection />
         <MethodSection />
         <RoiCalculator />
