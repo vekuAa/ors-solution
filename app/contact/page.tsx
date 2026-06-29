@@ -91,7 +91,6 @@ export default function ContactPage() {
 
                 <div className="mt-6 space-y-4">
 
-                  <Benefit text="Premier échange gratuit" />
 
                   <Benefit text="Aucun engagement" />
 
