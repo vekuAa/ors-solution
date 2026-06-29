@@ -43,9 +43,9 @@ export default function PageHero({
             )}
 
             {secondaryCta && (
-              <Button href={secondaryCta.href} variant="secondary">
-                {secondaryCta.label}
-              </Button>
+<Button href={secondaryCta.href} variant="light">
+  {secondaryCta.label}
+</Button>
             )}
           </div>
         )}

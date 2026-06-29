@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 type ButtonProps = {
   href: string;
   children: React.ReactNode;
-  variant?: "primary" | "secondary" | "dark";
+  variant?: "primary" | "secondary" | "dark" | "light";
   arrow?: boolean;
 };
 
@@ -19,8 +19,8 @@ export default function Button({
       "bg-blue-600 text-white hover:bg-blue-500 shadow-lg shadow-blue-900/20",
     secondary:
       "border border-slate-300 text-slate-950 hover:bg-slate-50",
-    dark:
-      "bg-slate-950 text-white hover:bg-blue-600",
+    dark: "bg-slate-950 text-white hover:bg-blue-600",
+    light: "border border-white/20 text-white hover:bg-white/10",
   };
 
   return (
