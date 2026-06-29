@@ -52,7 +52,9 @@ export default function Navbar() {
         <Link href="/" className="text-2xl font-black tracking-tight">
           ORS
         </Link>
-
+<Link href="/" className="hover:text-white">
+  Accueil
+</Link>
         <nav className="hidden items-center gap-8 text-sm font-bold text-slate-300 lg:flex">
           <Dropdown label="Solutions" items={solutions} />
           <Link href="/methode" className="hover:text-white">
@@ -84,6 +86,7 @@ export default function Navbar() {
       {open && (
         <div className="border-t border-white/10 bg-slate-950 px-6 py-6 lg:hidden">
           <div className="space-y-6">
+            <MobileLink href="/" label="Accueil" />
             <MobileGroup title="Solutions" items={solutions} />
             <MobileLink href="/methode" label="Méthode" />
             <MobileGroup title="Ressources" items={resources} />

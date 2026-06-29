@@ -6,6 +6,7 @@ import MethodSection from "@/components/MethodSection";
 import RoiCalculator from "@/components/RoiCalculator";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
 
 export default function HomePage() {
   return (
@@ -22,6 +23,7 @@ export default function HomePage() {
       </main>
 
       <Footer />
+      <BackToTop />
     </>
   );
 }
