@@ -1,8 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import PageHero from "@/components/ui/PageHero";
+import SectionTitle from "@/components/ui/SectionTitle";
+import CallToAction from "@/components/ui/CallToAction";
 
 const values = [
   {
@@ -47,23 +48,19 @@ export default function EntreprisePage() {
       <Navbar />
 
       <main className="bg-white text-slate-950">
-        <section className="bg-slate-950 px-6 py-28 text-white lg:px-20">
-          <div className="mx-auto max-w-7xl">
-            <p className="font-bold text-blue-300">Entreprise</p>
-
-            <h1 className="mt-5 max-w-5xl text-5xl font-black leading-tight tracking-tight md:text-7xl">
-              Nous croyons que l’organisation est devenue un avantage
-              concurrentiel.
-            </h1>
-
-            <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-300">
-              Chez ORS, nous pensons que les compétences sont de plus en plus
-              difficiles à recruter. C’est pourquoi nous aidons les entreprises
-              à identifier les tâches à faible valeur ajoutée afin que leurs
-              équipes puissent se concentrer sur leur cœur de métier.
-            </p>
-          </div>
-        </section>
+        <PageHero
+          eyebrow="Entreprise"
+          title="Nous croyons que l’organisation est devenue un avantage concurrentiel."
+          description="Chez ORS, nous aidons les entreprises à identifier les tâches à faible valeur ajoutée afin que leurs équipes puissent se concentrer sur leur cœur de métier."
+          primaryCta={{
+            label: "Demander un audit",
+            href: "/contact",
+          }}
+          secondaryCta={{
+            label: "Découvrir la méthode",
+            href: "/methode",
+          }}
+        />
 
         <section className="px-6 py-28 lg:px-20">
           <div className="mx-auto max-w-7xl">
@@ -78,14 +75,10 @@ export default function EntreprisePage() {
 
         <section className="bg-slate-50 px-6 py-24 lg:px-20">
           <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2">
-            <div>
-              <p className="font-bold text-blue-600">Notre mission</p>
-
-              <h2 className="mt-4 text-4xl font-black tracking-tight md:text-5xl">
-                Aider les entreprises à consacrer davantage de temps aux
-                activités qui créent réellement de la valeur.
-              </h2>
-            </div>
+            <SectionTitle
+              eyebrow="Notre mission"
+              title="Aider les entreprises à consacrer davantage de temps aux activités qui créent réellement de la valeur."
+            />
 
             <p className="text-lg leading-8 text-slate-600">
               ORS intervient comme un partenaire d’organisation. Notre rôle est
@@ -98,11 +91,10 @@ export default function EntreprisePage() {
 
         <section className="px-6 py-24 lg:px-20">
           <div className="mx-auto max-w-7xl">
-            <p className="font-bold text-blue-600">Nos valeurs</p>
-
-            <h2 className="mt-4 text-4xl font-black tracking-tight md:text-5xl">
-              Une méthode simple. Une exigence élevée.
-            </h2>
+            <SectionTitle
+              eyebrow="Nos valeurs"
+              title="Une méthode simple. Une exigence élevée."
+            />
 
             <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
               {values.map((value) => (
@@ -120,11 +112,11 @@ export default function EntreprisePage() {
 
         <section className="bg-slate-950 px-6 py-24 text-white lg:px-20">
           <div className="mx-auto max-w-7xl">
-            <p className="font-bold text-blue-300">Notre ambition</p>
-
-            <h2 className="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-5xl">
-              Aujourd’hui dans l’automobile. Demain dans d’autres secteurs.
-            </h2>
+            <SectionTitle
+              eyebrow="Notre ambition"
+              title="Aujourd’hui dans l’automobile. Demain dans d’autres secteurs."
+              light
+            />
 
             <div className="mt-12 grid gap-6 md:grid-cols-3">
               {timeline.map((item) => (
@@ -145,26 +137,12 @@ export default function EntreprisePage() {
           </div>
         </section>
 
-        <section className="px-6 py-24 lg:px-20">
-          <div className="mx-auto max-w-5xl rounded-[2.5rem] bg-blue-600 p-10 text-center text-white md:p-14">
-            <h2 className="text-4xl font-black tracking-tight md:text-5xl">
-              Vous souhaitez échanger avec ORS ?
-            </h2>
-
-            <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-blue-50">
-              Parlons de votre organisation et des tâches qui mobilisent vos
-              équipes au quotidien.
-            </p>
-
-            <Link
-              href="/contact"
-              className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-4 font-black text-blue-600"
-            >
-              Demander un audit
-              <ArrowRight size={18} />
-            </Link>
-          </div>
-        </section>
+        <CallToAction
+          title="Vous souhaitez échanger avec ORS ?"
+          description="Parlons de votre organisation et des tâches qui mobilisent vos équipes au quotidien."
+          buttonLabel="Demander un audit"
+          buttonHref="/contact"
+        />
       </main>
 
       <Footer />

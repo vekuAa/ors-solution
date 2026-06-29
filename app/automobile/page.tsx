@@ -4,8 +4,9 @@ import BackToTop from "@/components/BackToTop";
 import RoiCalculator from "@/components/RoiCalculator";
 import MethodSection from "@/components/MethodSection";
 import ContactSection from "@/components/ContactSection";
+import PageHero from "@/components/ui/PageHero";
+import SectionTitle from "@/components/ui/SectionTitle";
 import {
-  ArrowRight,
   Car,
   CheckCircle2,
   Clock3,
@@ -14,7 +15,6 @@ import {
   Sparkles,
   Wrench,
 } from "lucide-react";
-import Link from "next/link";
 
 const tasks = [
   "Déplacement véhicule",
@@ -38,65 +38,26 @@ export default function AutomobilePage() {
       <Navbar />
 
       <main className="bg-white text-slate-950">
-        <section className="bg-slate-950 px-6 py-28 text-white lg:px-20">
-          <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2">
-            <div>
-              <p className="font-bold text-blue-300">Solution Automobile</p>
-
-              <h1 className="mt-5 text-5xl font-black tracking-tight md:text-7xl">
-                Optimisation des ateliers automobiles.
-              </h1>
-
-              <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-300">
-                ORS accompagne les concessions automobiles dans
-                l’identification et la prise en charge des tâches annexes afin
-                que les techniciens restent concentrés sur leur cœur de métier.
-              </p>
-
-              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <Link
-                  href="/audit"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-7 py-4 font-black text-white hover:bg-blue-500"
-                >
-                  Lancer le diagnostic
-                  <ArrowRight size={18} />
-                </Link>
-
-                <Link
-                  href="/contact"
-                  className="rounded-full border border-white/20 px-7 py-4 text-center font-black text-white hover:bg-white/10"
-                >
-                  Demander un audit
-                </Link>
-              </div>
-            </div>
-
-            <div className="rounded-[2rem] border border-white/10 bg-white/10 p-8 shadow-2xl">
-              <p className="text-sm font-bold text-blue-300">En atelier</p>
-
-              <h2 className="mt-4 text-4xl font-black">
-                Les petites tâches créent de grandes pertes de temps.
-              </h2>
-
-              <div className="mt-8 grid gap-4">
-                <MiniLine icon={<Wrench />} text="Diagnostic et réparation" />
-                <MiniLine icon={<ShieldCheck />} text="Contrôle technique" />
-                <MiniLine icon={<Sparkles />} text="Tâches annexes" />
-                <MiniLine icon={<Car />} text="Restitution client" />
-              </div>
-            </div>
-          </div>
-        </section>
+        <PageHero
+          eyebrow="Solution Automobile"
+          title="Optimisation des ateliers automobiles."
+          description="ORS accompagne les concessions automobiles dans l’identification et la prise en charge des tâches annexes afin que les techniciens restent concentrés sur leur cœur de métier."
+          primaryCta={{
+            label: "Lancer le diagnostic",
+            href: "/audit",
+          }}
+          secondaryCta={{
+            label: "Demander un audit",
+            href: "/contact",
+          }}
+        />
 
         <section className="px-6 py-24 lg:px-20">
           <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2">
-            <div>
-              <p className="font-bold text-blue-600">Le problème</p>
-
-              <h2 className="mt-4 text-4xl font-black tracking-tight md:text-5xl">
-                Un atelier ne perd pas du temps d’un seul coup.
-              </h2>
-            </div>
+            <SectionTitle
+              eyebrow="Le problème"
+              title="Un atelier ne perd pas du temps d’un seul coup."
+            />
 
             <div className="space-y-6 text-lg leading-8 text-slate-600">
               <p>
@@ -138,17 +99,11 @@ export default function AutomobilePage() {
         <section className="bg-slate-50 px-6 py-24 lg:px-20">
           <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2">
             <div>
-              <p className="font-bold text-blue-600">Tâches annexes</p>
-
-              <h2 className="mt-4 text-4xl font-black tracking-tight md:text-5xl">
-                Ce qui semble secondaire finit par peser sur l’organisation.
-              </h2>
-
-              <p className="mt-6 text-lg leading-8 text-slate-600">
-                ORS aide à identifier les opérations pouvant être prises en
-                charge autrement, sans perturber le fonctionnement quotidien de
-                l’atelier.
-              </p>
+              <SectionTitle
+                eyebrow="Tâches annexes"
+                title="Ce qui semble secondaire finit par peser sur l’organisation."
+                description="ORS aide à identifier les opérations pouvant être prises en charge autrement, sans perturber le fonctionnement quotidien de l’atelier."
+              />
             </div>
 
             <div className="grid gap-3">
@@ -157,7 +112,7 @@ export default function AutomobilePage() {
                   key={task}
                   className="flex items-center gap-3 rounded-2xl bg-white p-4 shadow-sm"
                 >
-                  <CheckCircle2 className="text-green-600" size={20} />
+                  <CheckCircle2 className="shrink-0 text-green-600" size={20} />
                   <span className="font-bold text-slate-800">{task}</span>
                 </div>
               ))}
@@ -167,12 +122,11 @@ export default function AutomobilePage() {
 
         <section className="px-6 py-24 lg:px-20">
           <div className="mx-auto max-w-7xl rounded-[2.5rem] bg-slate-950 p-10 text-white md:p-14">
-            <p className="font-bold text-blue-300">La solution ORS</p>
-
-            <h2 className="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-5xl">
-              Le technicien reste sur son métier. ORS prend le relais sur les
-              tâches annexes.
-            </h2>
+            <SectionTitle
+              eyebrow="La solution ORS"
+              title="Le technicien reste sur son métier. ORS prend le relais sur les tâches annexes."
+              light
+            />
 
             <div className="mt-10 grid gap-4 md:grid-cols-2">
               {benefits.map((benefit) => (
@@ -195,21 +149,6 @@ export default function AutomobilePage() {
       <Footer />
       <BackToTop />
     </>
-  );
-}
-
-function MiniLine({
-  icon,
-  text,
-}: {
-  icon: React.ReactNode;
-  text: string;
-}) {
-  return (
-    <div className="flex items-center gap-4 rounded-2xl bg-white/10 p-4">
-      <div className="text-blue-300">{icon}</div>
-      <p className="font-bold">{text}</p>
-    </div>
   );
 }
 
